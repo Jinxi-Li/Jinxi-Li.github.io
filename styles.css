@@ -285,21 +285,21 @@ h1 small {
 .publication {
   position: relative;
   display: grid;
-  grid-template-columns: clamp(96px, 14vw, 150px) minmax(0, 1fr);
+  grid-template-columns: clamp(140px, 22vw, 250px) minmax(0, 1fr);
   gap: 1rem clamp(1.1rem, 3vw, 2rem);
   padding: 1.1rem 0;
   border-top: 1px solid rgba(222, 222, 215, 0.74);
 }
 
-.publication::before {
+.publication-thumb {
   grid-column: 1;
   grid-row: 1 / span 4;
+  align-self: center;
+  display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: auto;
   border: 1px solid rgba(36, 36, 36, 0.08);
   border-radius: 6px;
-  background: linear-gradient(135deg, rgba(236, 236, 234, 0.62), rgba(247, 247, 244, 0.28));
-  content: "";
 }
 
 .publication:first-child {
@@ -338,6 +338,20 @@ h1 small {
 .publication.highlight .venue,
 .publication.highlight .paper-links {
   border-left-color: #c7352f;
+}
+
+.highlight-label {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.45rem;
+  margin-left: 0.45rem;
+  padding: 0.1rem 0.48rem;
+  border-radius: 999px;
+  background: #fff0ee;
+  color: #c7352f;
+  font-size: 0.74rem;
+  font-weight: 780;
+  vertical-align: 0.08em;
 }
 
 .publication .venue {
@@ -403,8 +417,10 @@ h1 small {
     gap: 0;
   }
 
-  .publication::before {
-    display: none;
+  .publication-thumb {
+    grid-column: 1;
+    grid-row: auto;
+    margin-bottom: 0.8rem;
   }
 
   .profile {
